@@ -7,8 +7,16 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.Fragment>
+<<<<<<< Updated upstream
     <BrowserRouter>
         <App />
     </BrowserRouter>
+=======
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+>>>>>>> Stashed changes
   </React.Fragment>,
 );

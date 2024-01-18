@@ -1,4 +1,5 @@
 import { User } from "../@types/user.ts";
+import wrapPromise from "./wrapPromise.ts";
 
 export const fetchRecipes = async () => {
   const response = await fetch("/api/recipes");
@@ -6,14 +7,24 @@ export const fetchRecipes = async () => {
   return await response.json();
 };
 
-export const fetchRecipe = async (recipeId: string | undefined) => {
-  const response = await fetch(`/api/recipes/${recipeId}`);
+<<<<<<< Updated upstream
+=======
+export const delayedFetchRecipes = () => {
+  const delayedPromise = new Promise((resolve) =>
+    setTimeout(resolve, 5000),
+  ).then(async () => {
+    return await fetchRecipes();
+  });
 
-  return await response.json();
+  return wrapPromise(delayedPromise);
 };
 
+>>>>>>> Stashed changes
+export const fetchRecipe = async (recipeId: string | undefined) => {
+  const response = await fetch(`/api/recipes/${recipeId}`);
+  return await response.json();
+};
 export const fetchRecipesForConnectedUser = async (user: User | null) => {
   const response = await fetch(`/api/recipes?userId=${user?.id}`);
-
   return await response.json();
 };

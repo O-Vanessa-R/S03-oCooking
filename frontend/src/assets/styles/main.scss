@@ -18,10 +18,19 @@ body {
   }
 }
 
+<<<<<<< Updated upstream
 a {
   color: #000;
   text-decoration: none;
 }
+=======
+/* Components */
+@import "components/links";
+@import "components/recipeCard";
+@import "components/recipesList";
+@import "components/button";
+@import "components/modal";
+>>>>>>> Stashed changes
 
 .main__container {
   @include mixins.content-container;
