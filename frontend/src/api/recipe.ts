@@ -7,8 +7,6 @@ export const fetchRecipes = async () => {
   return await response.json();
 };
 
-<<<<<<< Updated upstream
-=======
 export const delayedFetchRecipes = () => {
   const delayedPromise = new Promise((resolve) =>
     setTimeout(resolve, 5000),
@@ -19,7 +17,6 @@ export const delayedFetchRecipes = () => {
   return wrapPromise(delayedPromise);
 };
 
->>>>>>> Stashed changes
 export const fetchRecipe = async (recipeId: string | undefined) => {
   const response = await fetch(`/api/recipes/${recipeId}`);
   return await response.json();

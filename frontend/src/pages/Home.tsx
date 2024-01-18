@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream
-import { useEffect, useState } from "react";
-import RecipesList from "../components/RecipesList.tsx";
-import { fetchRecipes } from "../api/recipe.ts";
-import { Recipe } from "../@types/recipe.ts";
-
-const Home = () => {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      setRecipes(await fetchRecipes());
-    })();
-=======
 import { Suspense, useEffect } from "react";
 import RecipesList from "../components/RecipesList.tsx";
 import { useAppDispatch, useAppSelector } from "../hooks/redux.ts";
@@ -48,7 +34,6 @@ const Home = () => {
   useEffect(() => {
     dispatch(count());
     dispatch(loadRecipesData());
->>>>>>> Stashed changes
   }, []);
   return (
     <>
